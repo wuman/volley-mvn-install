@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.google.android</groupId>
+    <artifactId>volley</artifactId>
+    <version>1</version>
+    <packaging>jar</packaging>
+    <name>volley</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <version.maven>3.0.3</version.maven>
+        <version.android.platform>4.0.1.2</version.android.platform>
+        <version.android.apilevel>14</version.android.apilevel>
+        <version.plugin.android-maven>3.5.3</version.plugin.android-maven>
+        <version.plugin.maven-compiler>3.1</version.plugin.maven-compiler>
+        <version.plugin.maven-source>2.2.1</version.plugin.maven-source>
+        <version.plugin.maven-javadoc>2.9</version.plugin.maven-javadoc>
+    </properties>
+
+    <prerequisites>
+        <maven>${version.maven}</maven>
+    </prerequisites>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.android</groupId>
+            <artifactId>android</artifactId>
+            <version>${version.android.platform}</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <sourceDirectory>src</sourceDirectory>
+
+        <plugins>
+            <plugin>
+                <groupId>com.jayway.maven.plugins.android.generation2</groupId>
+                <artifactId>android-maven-plugin</artifactId>
+                <version>${version.plugin.android-maven}</version>
+                <configuration>
+                    <sdk>
+                        <platform>${version.android.apilevel}</platform>
+                    </sdk>
+                    <extractDuplicates>true</extractDuplicates>
+                </configuration>
+                <extensions>true</extensions>
+            </plugin>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${version.plugin.maven-compiler}</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>${version.plugin.maven-source}</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${version.plugin.maven-javadoc}</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

@@ -22,3 +22,7 @@ dependency declaration in your own maven project:
 </dependency>
 ```
 
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/wuman/volley-mvn-install/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+

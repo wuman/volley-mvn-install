@@ -17,9 +17,6 @@
         <version.android.platform>4.0.1.2</version.android.platform>
         <version.android.apilevel>14</version.android.apilevel>
         <version.plugin.android-maven>3.5.3</version.plugin.android-maven>
-        <version.plugin.maven-compiler>3.1</version.plugin.maven-compiler>
-        <version.plugin.maven-source>2.2.1</version.plugin.maven-source>
-        <version.plugin.maven-javadoc>2.9</version.plugin.maven-javadoc>
     </properties>
 
     <prerequisites>
@@ -53,7 +50,6 @@
             </plugin>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${version.plugin.maven-compiler}</version>
                 <configuration>
                     <source>1.6</source>
                     <target>1.6</target>
@@ -62,7 +58,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-source-plugin</artifactId>
-                <version>${version.plugin.maven-source}</version>
                 <executions>
                     <execution>
                         <id>attach-sources</id>
@@ -75,7 +70,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>${version.plugin.maven-javadoc}</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
